@@ -63,9 +63,13 @@ WHERE
 The following SQL queries were developed to answer specific business questions:
 
 Write a SQL query to retrieve all columns for sales made on '2022-11-05:
+
+
 SELECT *
 FROM retail_sales
 WHERE sale_date = '2022-11-05';
+
+
 Write a SQL query to retrieve all transactions where the category is 'Clothing' and the quantity sold is more than 4 in the month of Nov-2022:
 SELECT 
   *
@@ -76,6 +80,8 @@ WHERE
     TO_CHAR(sale_date, 'YYYY-MM') = '2022-11'
     AND
     quantity >= 4
+
+
 Write a SQL query to calculate the total sales (total_sale) for each category.:
 SELECT 
     category,
@@ -83,6 +89,8 @@ SELECT
     COUNT(*) as total_orders
 FROM retail_sales
 GROUP BY 1
+
+
 Write a SQL query to find the average age of customers who purchased items from the 'Beauty' category.:
 SELECT
     ROUND(AVG(age), 2) as avg_age
@@ -118,6 +126,8 @@ FROM retail_sales
 GROUP BY 1, 2
 ) as t1
 WHERE rank = 1
+
+
 **Write a SQL query to find the top 5 customers based on the highest total sales **:
 SELECT 
     customer_id,
@@ -132,6 +142,8 @@ SELECT
     COUNT(DISTINCT customer_id) as cnt_unique_cs
 FROM retail_sales
 GROUP BY category
+
+
 Write a SQL query to create each shift and number of orders (Example Morning <12, Afternoon Between 12 & 17, Evening >17):
 WITH hourly_sale
 AS
@@ -163,11 +175,3 @@ Customer Insights: Reports on top customers and unique customer counts per categ
 Conclusion
 
 This project serves as a comprehensive introduction to SQL for data analysts, covering database setup, data cleaning, exploratory data analysis, and business-driven SQL queries. The findings from this project can help drive business decisions by understanding sales patterns, customer behavior, and product performance.
-
-How to Use
-
-Clone the Repository: Clone this project repository from GitHub.
-Set Up the Database: Run the SQL scripts provided in the database_setup.sql file to create and populate the database.
-Run the Queries: Use the SQL queries provided in the analysis_queries.sql file to perform your analysis.
-Explore and Modify: Feel free to modify the queries to explore different aspects of the dataset or answer additional business questions.
-
