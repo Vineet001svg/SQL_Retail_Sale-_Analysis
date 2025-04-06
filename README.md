@@ -23,13 +23,9 @@ Table Creation: A table named retail_sales is created to store the sales data. T
 
 
 CREATE DATABASE p1_retail_db;
-
 CREATE TABLE retail_sales
-
-
 (
-
-    transactions_id INT PRIMARY KEY,
+ transactions_id INT PRIMARY KEY,
     
     sale_date DATE,	
     
